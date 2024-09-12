@@ -1,4 +1,4 @@
-- name: Hugging Face Sync
+name: Hugging Face Sync
   uses: JacobLinCool/huggingface-sync@v1.0.0
   with:
     user: NicklasMadsen
