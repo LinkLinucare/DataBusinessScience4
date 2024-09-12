@@ -73,6 +73,11 @@ if page == "Loan Activities":
 # Gender Distribution Page
 elif page == "Gender Distribution":
     st.header("Gender Distribution Analysis")
+    
+# Because it is a new statement, i write the variables again
+    minimum = af_usa['loan_amount'].min()
+    q1 = af_usa['loan_amount'].quantile(0.25)
+    af_filtered_usa = af_usa[(af_usa['loan_amount'] >= minimum) & (af_usa['loan_amount'] <= q1)]
 
     # Gender distribution boxplot
     st.subheader("Loan Amount Distribution by Gender")
