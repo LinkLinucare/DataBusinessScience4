@@ -1,4 +1,4 @@
-name: Hugging Face Sync
+name: Hugging Push
 
 on:
   push:
@@ -9,11 +9,13 @@ jobs:
   sync_to_huggingface:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2  # Checks out your repository under $GITHUB_WORKSPACE
+
       - name: Hugging Face Sync
-        uses: JacobLinCool/huggingface-sync@v1.0.0
+        uses: backendcloud/hugging-push@v0.2.3
         with:
-          user: NicklasMadsen
-          space: af
-          token: ${{ secrets.HF_TOKEN }}  # Hugging Face access token stored in GitHub secrets
-          github: ${{ secrets.GITHUB_TOKEN }}  # Automatically provided GitHub Actions token
+          huggingface_repo: NicklasMadsen/af  # Assuming 'af' is the space name in Hugging Face
+          hf_token: ${{ secrets.HF_TOKEN }}  # Hugging Face access token stored in GitHub secrets
+          repo_type: space  # Since you're pushing to a space, not a model
+          space_sdk: streamlit  # Assuming you're using Streamlit; replace if using another SDK
+          private: false  # Set this according to your privacy preference on Hugging Face
