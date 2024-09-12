@@ -1,7 +1,7 @@
 name: Hugging Face Sync
-  uses: JacobLinCool/huggingface-sync@v1.0.0
-  with:
-    user: NicklasMadsen
-    space: af
-    token: ${{ secrets.HF_TOKEN }}  # Hugging Face access token stored in GitHub secrets
-    github: ${{ secrets.GITHUB_TOKEN }}  # Automatically provided GitHub Actions token
+uses: JacobLinCool/huggingface-sync@v1.0.0
+with:
+  user: NicklasMadsen
+  space: af
+  token: ${{ secrets.HF_TOKEN }}  # Hugging Face access token stored in GitHub secrets
+  github: ${{ secrets.GITHUB_TOKEN }}  # Automatically provided GitHub Actions token
